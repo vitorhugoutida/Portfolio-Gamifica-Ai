@@ -3,6 +3,9 @@ import { Resources } from "../resources";
 
 export class welcomeScene extends Scene {
 
+    //  Declaração do elementoTexto
+    elementoTexto?: HTMLElement
+
     textoIniciar?: Label
 
     // Ao entrar ou sair da cena, ultiliza o efeito de transição lenta
@@ -55,7 +58,7 @@ export class welcomeScene extends Scene {
         // Adicionando Actor Logo na tela
         this.add(actorLogo)
 
-        // EXERCICIO - Criação do textoIniciar - Pressione "Enter" para iniciar...
+        // Criar texto para Enter
 
         this.textoIniciar = new Label({
             text: "Pressione \"Enter\" para iniciar...", 
@@ -69,6 +72,8 @@ export class welcomeScene extends Scene {
                 textAlign: TextAlign.Center
             })
         })
+        
+        // EXERCICIO - Criação do textoIniciar - Pressione "Enter" para iniciar... CONCLUIDO
 
         // let textoIniciar = new Label({
         //     text: "Pressione \"Enter\" para iniciar...",
@@ -101,6 +106,8 @@ export class welcomeScene extends Scene {
             if (event.key == Keys.Enter) {
                 // Direciona para a cena historia
                 engine.goToScene("historia")
+
+                
             }
         })
     }

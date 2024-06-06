@@ -17,7 +17,19 @@
     position: relative;
   }
 
-.sobre-gamifica {
+  .sobre-gamifica {
+    left: 5%;
+
+  }
+
+  .sobre-gamificacao {
+    right: 5%;
+  }
+
+.sobre-gamifica, .sobre-gamificacao {
+
+  /* opacity: 0%; */
+
   width: 500px;
   height: 600px;
 
@@ -33,18 +45,17 @@
 
   position: absolute;
   top: 10%;
-  left: 5%;
 
 }
 
-.sobre-gamifica h2 {
+.sobre-gamifica h2, .sobre-gamificacao h2{
   margin-bottom: 40px;
 
   font-size: 30px;
   text-align: center;
 }
 
-.sobre-gamifica p {
+.sobre-gamifica p, .sobre-gamificacao p {
   font-size: 16px;
   text-align: justify;
 
