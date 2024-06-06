@@ -1,5 +1,7 @@
-import { Actor, Color, Engine, FadeInOut, Keys, Resource, Scene, Transition, vec } from "excalibur";
+import { Actor, Color, Engine, Fade, FadeInOut, Keys, Resource, Scene, Timer, Transition, vec } from "excalibur";
 import { Resources } from "../resources";
+import { delay } from "excalibur/build/dist/Util/Util";
+// import { Resources } from "../resources";
 
 export class historyScene extends Scene {
     //  Declaração do elementoTexto
@@ -77,16 +79,230 @@ export class historyScene extends Scene {
 
         // Configurar a cena para monitorar o evento de tecla pressionada
 
-        // Monitora o evento de tecla pressionada
         this.input.keyboard.on("press", (event) => {
-            // Caso a tecla pressionada for "Enter", deve ir para a proxima cena
             if (event.key == Keys.Enter) {
-                // Direciona para a cena historia
+                // Direcionar para a próxima cena
                 engine.goToScene("gamificacao")
+
+                setTimeout( () => { 
+                    this.elementoTexto.style.opacity = "0.98"
+
+
+                    setTimeout( () => { 
+                        this.elementoTexto.style.opacity = "0.96"
+
+
+                        setTimeout( () => { 
+                            this.elementoTexto.style.opacity = "0.94"
+    
+
+                            setTimeout( () => { 
+                                this.elementoTexto.style.opacity = "0.92"
+        
+
+                                setTimeout( () => { 
+                                    this.elementoTexto.style.opacity = "0.90"
+            
+
+                                    setTimeout( () => { 
+                                        this.elementoTexto.style.opacity = "0.88"
+                
+
+                                        setTimeout( () => { 
+                                            this.elementoTexto.style.opacity = "0.86"
+                    
+
+                                            setTimeout( () => { 
+                                                this.elementoTexto.style.opacity = "0.84"
+                        
+
+                                                setTimeout( () => { 
+                                                    this.elementoTexto.style.opacity = "0.82"
+                            
+
+                                                    setTimeout( () => { 
+                                                        this.elementoTexto.style.opacity = "0.80"
+                        
+
+                                                        setTimeout( () => { 
+                                                            this.elementoTexto.style.opacity = "0.78"
+                            
+
+                                                            setTimeout( () => { 
+                                                                this.elementoTexto.style.opacity = "0.76"
+                                
+
+                                                                setTimeout( () => { 
+                                                                    this.elementoTexto.style.opacity = "0.74"
+                                    
+
+                                                                    setTimeout( () => { 
+                                                                        this.elementoTexto.style.opacity = "0.72"
+                                        
+
+                                                                        setTimeout( () => { 
+                                                                            this.elementoTexto.style.opacity = "0.70"
+                                            
+
+                                                                            setTimeout( () => { 
+                                                                                this.elementoTexto.style.opacity = "0.68"
+                                                
+
+                                                                                setTimeout( () => { 
+                                                                                    this.elementoTexto.style.opacity = "0.66"
+                                                    
+
+                                                                                    setTimeout( () => { 
+                                                                                        this.elementoTexto.style.opacity = "0.64"
+
+                                                                                        setTimeout( () => { 
+                                                                                            this.elementoTexto.style.opacity = "0.62"
+
+                                                                                            setTimeout( () => { 
+                                                                                                this.elementoTexto.style.opacity = "0.6"
+
+                                                                                                setTimeout( () => { 
+                                                                                                    this.elementoTexto.style.opacity = "0.58"
+
+                                                                                                    setTimeout( () => { 
+                                                                                                        this.elementoTexto.style.opacity = "0.56"
+
+                                                                                                        setTimeout( () => { 
+                                                                                                            this.elementoTexto.style.opacity = "0.54"
+
+                                                                                                            setTimeout( () => { 
+                                                                                                                this.elementoTexto.style.opacity = "0.52"
+
+                                                                                                                setTimeout( () => { 
+                                                                                                                    this.elementoTexto.style.opacity = "0.5"
+
+                                                                                                                    setTimeout( () => { 
+                                                                                                                        this.elementoTexto.style.opacity = "0.48"
+
+                                                                                                                        setTimeout( () => { 
+                                                                                                                            this.elementoTexto.style.opacity = "0.46"
+
+                                                                                                                            setTimeout( () => { 
+                                                                                                                                this.elementoTexto.style.opacity = "0.44"
+
+                                                                                                                                setTimeout( () => { 
+                                                                                                                                    this.elementoTexto.style.opacity = "0.42"
+
+                                                                                                                                    setTimeout( () => { 
+                                                                                                                                        this.elementoTexto.style.opacity = "0.4"
+
+                                                                                                                                        setTimeout( () => { 
+                                                                                                                                            this.elementoTexto.style.opacity = "0.38"
+
+                                                                                                                                            setTimeout( () => { 
+                                                                                                                                                this.elementoTexto.style.opacity = "0.36"
+
+                                                                                                                                                setTimeout( () => { 
+                                                                                                                                                    this.elementoTexto.style.opacity = "0.34"
+
+                                                                                                                                                    setTimeout( () => { 
+                                                                                                                                                        this.elementoTexto.style.opacity = "0.32"
+
+                                                                                                                                                        setTimeout( () => { 
+                                                                                                                                                            this.elementoTexto.style.opacity = "0.3"
+
+                                                                                                                                                            setTimeout( () => { 
+                                                                                                                                                                this.elementoTexto.style.opacity = "0.28"
+
+                                                                                                                                                                setTimeout( () => { 
+                                                                                                                                                                    this.elementoTexto.style.opacity = "0.26"
+
+                                                                                                                                                                    setTimeout( () => { 
+                                                                                                                                                                        this.elementoTexto.style.opacity = "0.24"
+
+                                                                                                                                                                        setTimeout( () => { 
+                                                                                                                                                                            this.elementoTexto.style.opacity = "0.22"
+
+                                                                                                                                                                            setTimeout( () => { 
+                                                                                                                                                                                this.elementoTexto.style.opacity = "0.2"
+
+                                                                                                                                                                                setTimeout( () => { 
+                                                                                                                                                                                    this.elementoTexto.style.opacity = "0.18"
+
+                                                                                                                                                                                    setTimeout( () => { 
+                                                                                                                                                                                        this.elementoTexto.style.opacity = "0.16"
+
+                                                                                                                                                                                        setTimeout( () => { 
+                                                                                                                                                                                            this.elementoTexto.style.opacity = "0.14"
+
+                                                                                                                                                                                            setTimeout( () => { 
+                                                                                                                                                                                                this.elementoTexto.style.opacity = "0.12"
+
+                                                                                                                                                                                                setTimeout( () => { 
+                                                                                                                                                                                                    this.elementoTexto.style.opacity = "0.1"
+
+                                                                                                                                                                                                    setTimeout( () => { 
+                                                                                                                                                                                                        this.elementoTexto.style.opacity = "0.08"
+
+                                                                                                                                                                                                        setTimeout( () => { 
+                                                                                                                                                                                                            this.elementoTexto.style.opacity = "0.06"
+
+                                                                                                                                                                                                            setTimeout( () => { 
+                                                                                                                                                                                                                this.elementoTexto.style.opacity = "0.04"
+
+                                                                                                                                                                                                                setTimeout( () => { 
+                                                                                                                                                                                                                    this.elementoTexto.style.opacity = "0.02"
+
+                                                                                                                                                                                                                    setTimeout( () => { 
+                                                                                                                                                                                                                        this.elementoTexto.style.opacity = "0"
+                                                                                                                                                                                        
+                                                                                            
+                                                                                                                                                                                                                     }, 20 );
+                                                                                                                                                                                                                 }, 20 );
+                                                                                                                                                                                                             }, 20 );
+                                                                                                                                                                                                         }, 20 );
+                                                                                                                                                                                                     }, 20 );
+                                                                                                                                                                                                 }, 20 );
+                                                                                                                                                                                             }, 20 );
+                                                                                                                                                                                         }, 20 );
+                                                                                                                                                                                     }, 20 );
+                                                                                                                                                                                 }, 20 );
+                                                                                                                                                                             }, 20 );
+                                                                                                                                                                         }, 20 );
+                                                                                                                                                                     }, 20 );
+                                                                                                                                                                 }, 20 );
+                                                                                                                                                             }, 20 );
+                                                                                                                                                         }, 20 );
+                                                                                                                                                     }, 20 );
+                                                                                                                                                 }, 20 );
+                                                                                                                                             }, 20 );
+                                                                                                                                         }, 20 );
+                                                                                                                                     }, 20 );
+                                                                                                                                 }, 20 );
+                                                                                                                             }, 20 );
+                                                                                                                         }, 20 );
+                                                                                                                     }, 20 );
+                                                                                                                 }, 20 );
+                                                                                                             }, 20 );
+                                                                                                         }, 20 );
+                                                                                                     }, 20 );
+                                                                                                 }, 20 );
+                                                                                             }, 20 );
+                                                                                         }, 20 );
+                                                                                     }, 20 );
+                                                                                 }, 20 );
+                                                                             }, 20 );
+                                                                         }, 20 );
+                                                                     }, 20 );
+                                                                 }, 20 );
+                                                             }, 20 );
+                                                         }, 20 );
+                                                     }, 20 );
+                                                 }, 20 );
+                                             }, 20 );
+                                         }, 20 );                    
+                                     }, 20 );               
+                                 }, 20 );            
+                             }, 20 );       
+                         }, 20 );   
+                     }, 20 );
+                 }, 20 );
             }
         })
     }
-
-    }
-
-
+}
