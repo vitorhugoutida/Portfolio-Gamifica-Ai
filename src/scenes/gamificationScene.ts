@@ -1,4 +1,4 @@
-import { Actor, Color, Engine, FadeInOut, Scene, Transition, vec, } from "excalibur";
+import { Actor, Color, Engine, Keys, Scene, SceneActivationContext, Transition, vec, } from "excalibur";
 import { Resources } from "../resources";
 
 export class gamificationScene extends Scene {
@@ -7,21 +7,21 @@ export class gamificationScene extends Scene {
     elementoHTML?: HTMLElement
 
     //  Método para esmaecerum elemento HTML 
-    // fadeOutElement(elemento: HTMLElement) {
-    //     let opacidade = parseFloat(elemento.style.opacity)
+    fadeOutElement(elemento: HTMLElement) {
+        let opacidade = parseFloat(elemento.style.opacity)
 
-    //     // Repetir dimunição da opacidade
-    //     setInterval(() => {
-    //     // Se elemento ainda está visivel
-    //     if (opacidade > 0) {
-    //         // Dimunuir a opacidade
-    //         opacidade = opacidade - 0.1
+        // Repetir dimunição da opacidade
+        setInterval(() => {
+        // Se elemento ainda está visivel
+        if (opacidade > 0) {
+            // Dimunuir a opacidade
+            opacidade = opacidade - 0.1
 
-    //         // Atualizar a opacidade do elemento
-    //         elemento.style.opacity = opacidade.toString()
-    //     }
-    //    }, 20)
-    // }
+            // Atualizar a opacidade do elemento
+            elemento.style.opacity = opacidade.toString()
+        }
+       }, 20)
+    }
 
      // Ao entrar ou sair da cena, ultiliza o efeito de transição lenta
     //  onTransition(direction: "in" | "out"): Transition | undefined {
@@ -59,6 +59,16 @@ export class gamificationScene extends Scene {
         actorLogoGamificaAi.graphics.add(spriteLogoGamificaAi)
 
         this.add(actorLogoGamificaAi)
+
+        // Configura a cena para detectar a tecla Enter e ir para a próxima cena
+
+        this.input.keyboard.on("press", (event) => {
+            if (event.key == Keys.Enter) {
+                this.fadeOutElement(this.elementoHTML!)
+                engine.goToScene("exposicao")
+            }
+        })
+
 
         // let actorFotoGamificacao = new Actor({
         //     pos: vec(engine.drawWidth - 900, engine.halfDrawHeight)
@@ -100,6 +110,10 @@ export class gamificationScene extends Scene {
  
         //  this.elementoTextoGamificacao.innerHTML = `<h2>O que é gamificação</h2>
         //  <p>Gamificação é a aplicação de elementos típicos de jogos em contextos não lúdicos, com o objetivo de engajar e motivar indivíduos a atingir determinados objetivos. Esta abordagem se utiliza de componentes como pontuação, níveis, recompensas, desafios, e feedback imediato, visando promover comportamentos desejados e aumentar a participação e o comprometimento dos participantes.</p>`
+    }
+
+    onDeactivate(context: SceneActivationContext<undefined>): void {
+        this.elementoHTML?.remove()
     }
 
 }
