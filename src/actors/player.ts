@@ -1,15 +1,25 @@
-import { Actor, Animation, CollisionType, Color, Engine, Keys, Resource, SpriteSheet, Vector, vec } from "excalibur";
+import { Actor, Animation, Collider, CollisionContact, CollisionType, Color, Engine, Keys, Resource, Side, SpriteSheet, Vector, vec } from "excalibur";
 import { Resources } from "../resources";
 
 export class Player extends Actor {
+
     // Propriedades do player
+
     private velocidade: number = 180
+    private ultimaDirecao: string = "down"
+
+    private temObjetoProximo: boolean = false
+
+    private ultimoColisor?: Collider
+
+
     // Configuração do Player
+
     constructor(posicao: Vector) {
         super({
             pos: posicao,
-            width: 32,
-            height: 32,
+            width: 35,
+            height: 40,
             name: "Jogador",
             color: Color.Red,
             collisionType: CollisionType.Active
@@ -30,13 +40,16 @@ export class Player extends Actor {
             },
             spacing: {
                 originOffset: {
-                    y: 8
+                    y: 0.6,
+
                 }
+
                 
             }
         })
 
         // Criar as animações
+        const duracaoFrameAnimacao = 70
         // Animações Idle
         // Idle esquerda
         const leftIdle = new Animation({
@@ -48,12 +61,148 @@ export class Player extends Actor {
                 {graphic: PlayerSpriteSheet.getSprite(16, 1)},
                 {graphic: PlayerSpriteSheet.getSprite(17, 1)},
             ],
-            frameDuration: 70
+            frameDuration: duracaoFrameAnimacao
+
         })
 
         this.graphics.add("left-idle", leftIdle)
 
-        this.graphics.use("left-side")
+        // this.graphics.use("left-side")
+
+        // Idle Direita
+
+        const rightIdle = new Animation({
+            frames: [
+                { graphic: PlayerSpriteSheet.getSprite(0, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(1, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(2, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(3, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(4, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(5, 1) },
+            ],
+            frameDuration: duracaoFrameAnimacao
+
+        })
+
+        this.graphics.add("right-idle", rightIdle)
+
+        // UpIdle
+
+        const upIdle = new Animation({
+            frames: [
+                { graphic: PlayerSpriteSheet.getSprite(6, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(7, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(8, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(9, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(10, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(11, 1) },
+            ],
+            frameDuration: duracaoFrameAnimacao
+
+        })
+
+        this.graphics.add("up-idle", upIdle)
+
+        // downIdle
+
+        const downIdle = new Animation({
+            frames: [
+                { graphic: PlayerSpriteSheet.getSprite(18, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(19, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(20, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(21, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(22, 1) },
+                { graphic: PlayerSpriteSheet.getSprite(23, 1) },
+            ],
+            frameDuration: duracaoFrameAnimacao
+
+        })
+
+        this.graphics.add("down-idle", downIdle)
+
+        // animações Walk
+
+        // Andar para direita
+
+        // rightWalk
+
+        const rightWalk = new Animation({
+            frames: [
+                { graphic: PlayerSpriteSheet.getSprite(0, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(1, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(2, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(3, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(4, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(5, 2) },
+            ],
+            frameDuration: duracaoFrameAnimacao
+
+        })
+
+        this.graphics.add("right-walk", rightWalk)
+        
+        // Andar para esquerda
+
+        // leftWalk
+
+        const leftWalk = new Animation({
+            frames: [
+                { graphic: PlayerSpriteSheet.getSprite(12, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(13, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(14, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(15, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(16, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(17, 2) },
+            ],
+            frameDuration: duracaoFrameAnimacao
+
+        })
+
+        this.graphics.add("left-walk", leftWalk)
+
+        // Andar para cima
+
+        // upWalk
+
+        const upWalk = new Animation({
+            frames: [
+                { graphic: PlayerSpriteSheet.getSprite(6, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(7, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(8, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(9, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(10, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(11, 2) },
+            ],
+            frameDuration: duracaoFrameAnimacao
+
+        })
+
+        this.graphics.add("up-walk", upWalk)
+
+        // Andar para baixo
+
+        // downWalk
+
+        const downWalk = new Animation({
+            frames: [
+                { graphic: PlayerSpriteSheet.getSprite(18, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(19, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(20, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(21, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(22, 2) },
+                { graphic: PlayerSpriteSheet.getSprite(23, 2) },
+            ],
+            frameDuration: duracaoFrameAnimacao
+
+        })
+
+        this.graphics.add("down-walk", downWalk)
+
+        // this.graphics.use("down-walk")
+
+        // Definir zoom
+        // this.graphics.current!.scale = vec(1.6, 1.6)
+        
 
         // Configura player para monitorar evento "hold" -> segurar tecla
 
@@ -65,6 +214,11 @@ export class Player extends Actor {
                     // Mover para esquerda
                     // Define a velocidade x para negativa, que significa movimentar o player para esquerda
                     this.vel.x = -this.velocidade
+                    this.graphics.use("left-walk")
+
+                    // Quardar ultima direcao
+                    this.ultimaDirecao = "left"
+
                     break;
 
                     case Keys.Right:
@@ -72,6 +226,10 @@ export class Player extends Actor {
                         // Mover para direita
                         //  Define a velocidade x para positiva, que significa movimentar o player para a direita
                         this.vel.x = this.velocidade
+                        this.graphics.use("right-walk")
+
+                        // Quardar ultima direcao
+                    this.ultimaDirecao = "right"
                         break;
 
                         case Keys.Up:
@@ -79,6 +237,10 @@ export class Player extends Actor {
                             // Mover para cima
                             // Define a velocidade y para negativa, que significa movimentar o player para cima
                             this.vel.y = -this.velocidade
+                            this.graphics.use("up-walk")
+
+                            // Quardar ultima direcao
+                    this.ultimaDirecao = "up"
                             break;
 
                             case Keys.Down:
@@ -86,6 +248,10 @@ export class Player extends Actor {
                                 // Mover para baixo
                                 // Define a velocidade y para positiva, que significa movimentar o player para baixo
                                 this.vel.y = this.velocidade
+                                this.graphics.use("down-walk")
+
+                                // Quardar ultima direcao
+                    this.ultimaDirecao = "down"
                                 break; 
                         default:
                             // Zera a velocidade do player, PARA a movimentação
@@ -112,6 +278,8 @@ export class Player extends Actor {
             ) {
                 // Zerar velocidade horizontal
                 this.vel.x = 0
+
+                // this.graphics.use("down-idle")
             }
 
             // Parar movimentação vertical ao soltar as teclas de movimentação vertical
@@ -125,8 +293,38 @@ export class Player extends Actor {
             ) {
                 // Zerar velocidade horizontal
                 this.vel.y = 0
+
+                // this.graphics.use("down-idle")
+
+            }
+
+            // Ao parar o player, definir animação idle da ultima direcao
+
+            if (this.vel.x == 0 && this.vel.y == 0) {
+                // ultimaDirecao - left, right, up, down
+                // Colar a ultimaDirecao + -idle -> ex. left-idle, right-idle, up-idle e down-idle
+                this.graphics.use(this.ultimaDirecao + "-idle")
+                
             }
             
         })
+    }
+
+    onPreCollisionResolve(self: Collider, other: Collider, side: Side, contact: CollisionContact): void {
+        // Indicar que tem um objeto proximo
+        this.temObjetoProximo = true
+
+        // Registat o ultimo objeto colidido
+        this.ultimoColisor = other
+    }
+
+    onPreUpdate(engine: Engine<any>, delta: number): void {
+        // Detectar se o player esta distante do ultimo objeto colidido
+        if (this.ultimoColisor && this.pos.distance(this.ultimoColisor.worldPos) > 45) {
+            // Marcar que o objeto nao esta proximo
+            this.temObjetoProximo = false
+
+            console.log("Está longe")
+        }
     }
 }
