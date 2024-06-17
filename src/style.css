@@ -63,3 +63,38 @@
 
 }
 
+.card-mesa-a p, .card-mesa-b p, .card-mesa-c p {
+
+  width: 400px;
+  height: 400px;
+
+  font-size: 16px;
+  text-align: justify;
+
+  line-height: 2;
+
+  display: unset;
+  }
+
+.card-mesa-a, .card-mesa-b, .card-mesa-c {
+  background-color: white;
+
+  opacity: 0%;
+
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  width: 500px;
+  height: 600px;
+
+  padding: 50px;
+
+  color: black;
+  font-family: "Anta";
+}
+
+
+
+  
+

@@ -218,14 +218,14 @@
  </layer>
  <objectgroup id="11" name="ObjetosColisores">
   <object id="6" name="mesa_tenis" x="685.75" y="364.25" width="66.375" height="98"/>
-  <object id="7" name="mesa_stand_a" x="201.674" y="239.844" width="76.7273" height="42.4205"/>
-  <object id="8" name="mesa_stand_b" x="425.875" y="239.5" width="76" height="42.25"/>
-  <object id="9" name="mesa_stand_c" x="649.625" y="240.125" width="76.375" height="42"/>
+  <object id="7" name="mesa_stand_a" x="201.674" y="239.844" width="76.2273" height="40.0143"/>
+  <object id="8" name="mesa_stand_b" x="425.875" y="239.5" width="76.0556" height="40.45"/>
+  <object id="9" name="mesa_stand_c" x="649.625" y="240.125" width="76.2188" height="39.6875"/>
   <object id="10" name="sofa" x="209.875" y="348" width="44.25" height="67.375"/>
   <object id="11" name="mesa_computador_a" x="137.875" y="240.005" width="44.25" height="47.7218"/>
   <object id="12" name="mesa_computador_b" x="361.667" y="239.782" width="44.25" height="47.8636"/>
   <object id="13" name="mesa_computador_c" x="585.75" y="240.52" width="44.25" height="47.3154"/>
-  <object id="15" name="gaveta_a" x="287.955" y="240.019" width="32.0227" height="39.9581"/>
+  <object id="15" name="gaveta_a" x="288.002" y="240.019" width="31.9758" height="39.9698"/>
   <object id="16" name="gaveta_b" x="511.625" y="240.085" width="32.0227" height="39.7555"/>
   <object id="17" name="gaveta_c" x="735.989" y="240.107" width="32.0227" height="39.8693"/>
   <object id="18" name="banco" x="267.775" y="448.009" width="40.4545" height="45.9943"/>
