@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 
   body {
     background-color: black;
@@ -63,9 +63,9 @@
 
 }
 
-.card-mesa-a p {
+.card-mesa-a p, .card-mesa-b p, .card-mesa-c p {
 
-  width: 500px;
+  width: 450px;
   height: 400px;
 
   font-size: 16px;
@@ -75,11 +75,19 @@
 
   }
 
-.card-mesa-a img {
+.card-mesa-a img, .card-mesa-b img, .card-mesa-c img {
   width: 500px;
   height: 300px;
 
   border-radius: 20px;
+
+  right: 50px;
+
+  position: absolute;
+
+  left: 600px;
+  
+  top: 150px;
 
 }
 
@@ -107,13 +115,15 @@
 
   position: absolute;
 
-  width: 500px;
+  width: 450px;
   height: 600px;
 
   padding: 50px;
 
   color: black;
   font-family: "Anta";
+
+  left: 50px;
 }
 
 

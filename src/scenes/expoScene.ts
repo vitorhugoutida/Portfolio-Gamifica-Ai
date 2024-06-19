@@ -1,7 +1,7 @@
 import { Actor, CollisionType, Color, Engine, FadeInOut, Resource, Scene, Transition, vec } from "excalibur";
 import { Resources } from "../resources";
 import { Player } from "../actors/player";
-import { Npc } from "../actors/npc";
+// import { Npc } from "../actors/npc-a";
 
 export class expoScene extends Scene {
 
@@ -18,6 +18,16 @@ export class expoScene extends Scene {
         // Ativar o modo DEBUG
 
         engine.toggleDebug()
+
+        // Carregar musica de fundo (BGM) - BackGround Music
+
+        let musicaFundo = Resources.RitmadaBGM
+
+        // Configurar a musica e excutar 
+        musicaFundo.loop = true
+        // musicaFundo.play(0.5)
+
+
         // Carregar o mapa
         let tiledMap = Resources.Mapa
 
@@ -58,29 +68,29 @@ export class expoScene extends Scene {
 
         // Configurar NPCs
 
-        let npcA = new Npc(
-            vec(npcSpawnPointA.x + offsetX, npcSpawnPointA.y + offsetY),
-            Color.Blue,
-            "NpcA"
-        )
+        // let npcA = new NpcA(
+        //     vec(npcSpawnPointA.x + offsetX, npcSpawnPointA.y + offsetY),
+        //     Color.Blue,
+        //     "NpcA"
+        // )
 
-        let npcB = new Npc(
-            vec(npcSpawnPointB.x + offsetX, npcSpawnPointB.y + offsetY),
-            Color.Chartreuse,
-            "NpcB"
-        )
+        // let npcB = new NpcB(
+        //     vec(npcSpawnPointB.x + offsetX, npcSpawnPointB.y + offsetY),
+        //     Color.Chartreuse,
+        //     "NpcB"
+        // )
 
-        let npcC = new Npc(
-            vec(npcSpawnPointC.x + offsetX, npcSpawnPointC.y + offsetY),
-            Color.Yellow,
-            "NpcC"
-        )
+        // let npcC = new NpcC(
+        //     vec(npcSpawnPointC.x + offsetX, npcSpawnPointC.y + offsetY),
+        //     Color.Yellow,
+        //     "NpcC"
+        // )
 
         // Adicionar os NPCs
 
-        this.add(npcA)
-        this.add(npcB)
-        this.add(npcC)
+        // this.add(npcA)
+        // this.add(npcB)
+        // this.add(npcC)
 
         // Focar a camera no player
         this.camera.strategy.lockToActor(jogador)
