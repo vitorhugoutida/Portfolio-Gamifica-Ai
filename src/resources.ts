@@ -18,9 +18,10 @@ import tsxBibliotecaPath from "./maps/tileset_biblioteca.tsx?url";
 import tmxMapaPath from "./maps/showroom_map.tmx?url";
 
 import playerSpritePath from "./sprites/jogador_character.png";
-import npcASpritePath from "./sprites/npc_a_character.png";
-import npcBSpritePath from "./sprites/npc_b_character.png";
-import npcCSpritePath from "./sprites/npc_c_character.png";
+
+import npcASpriteSheet from "./sprites/npc_a_character.png";
+import npcBSpriteSheet from "./sprites/npc_b_character.png";
+import npcCSpriteSheet from "./sprites/npc_c_character.png";
 
 import ritmada from "./sounds/ritmada_zelda.mp3";
 import classico from "./sounds/zelda.mp3";
@@ -31,9 +32,9 @@ export const Resources = {
 
 
   PlayerSpriteSheet: new ImageSource(playerSpritePath, {filtering: ImageFiltering.Pixel }),
-  NpcASpriteSheet: new ImageSource(npcASpritePath, {filtering: ImageFiltering.Pixel }),
-  NpcBSpriteSheet: new ImageSource(npcBSpritePath, {filtering: ImageFiltering.Pixel }),
-  NpcCSpriteSheet: new ImageSource(npcCSpritePath, {filtering: ImageFiltering.Pixel }),
+  NpcASpriteSheet: new ImageSource(npcASpriteSheet),
+  NpcBSpriteSheet: new ImageSource(npcBSpriteSheet),
+  NpcCSpriteSheet: new ImageSource(npcCSpriteSheet),
 
   fotoMesaA: new ImageSource(fotoMesaA),
   fotoMesaB: new ImageSource(fotoMesaB),
