@@ -94,7 +94,9 @@ export class caseScene extends Scene {
         // console.log(this.objetoInteracao);
 
         // Se for a mesa a
-        if (this.objetoInteracao.nomeDaMesa == "mesa_stand_a") {
+        if (this.objetoInteracao.nomeDoActor == "mesa_stand_a") {
+            // console.log("AAAA");
+            
             this.textoDaCena = "Essa é a descrição do case A"
 
             // Mesa A detectada
@@ -110,7 +112,7 @@ export class caseScene extends Scene {
             this.actorEmpresa?.graphics.add(this.listaImagens![0])
 
              // Mudar o zoom da imagem
-             this.actorEmpresa!.graphics.current!.scale = vec(0.2, 0.2)
+             this.actorEmpresa!.graphics.current!.scale = vec(0.4, 0.4)
 
         //     this.caseCardA = document.createElement("div") as HTMLElement
 
@@ -139,7 +141,7 @@ export class caseScene extends Scene {
 
 
         // Se for a mesa b
-        if (this.objetoInteracao.nomeDaMesa == "mesa_stand_b") {
+        if (this.objetoInteracao.nomeDoActor == "mesa_stand_b") {
             this.textoDaCena = "Essa é a descrição do case B"
 
              // Mesa B detectada
@@ -152,7 +154,7 @@ export class caseScene extends Scene {
             this.actorEmpresa?.graphics.add(this.listaImagens![1])
 
             // Mudar o zoom da imagem
-            this.actorEmpresa!.graphics.current!.scale = vec(0.2, 0.2)
+            this.actorEmpresa!.graphics.current!.scale = vec(0.25, 0.25)
 
     //         this.caseCardB = document.createElement("div") as HTMLElement
 
@@ -176,7 +178,7 @@ export class caseScene extends Scene {
         }
 
         // Se for a mesa c
-        if (this.objetoInteracao.nomeDaMesa == "mesa_stand_c") {
+        if (this.objetoInteracao.nomeDoActor == "mesa_stand_c") {
             this.textoDaCena = "Essa é a descrição do case C"
 
             // Mesa C detectada
@@ -192,7 +194,7 @@ export class caseScene extends Scene {
             this.actorEmpresa?.graphics.add(this.listaImagens![2])
 
             // Mudar o zoom da imagem
-            this.actorEmpresa!.graphics.current!.scale = vec(0.2, 0.2)
+            this.actorEmpresa!.graphics.current!.scale = vec(0.4, 0.4)
 
     //         this.caseCardC = document.createElement("div") as HTMLElement
 

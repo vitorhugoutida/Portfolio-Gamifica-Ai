@@ -30,17 +30,14 @@ export const Resources = {
   Sword: new ImageSource(sword),
   Logo: new ImageSource(logo),
 
-
   PlayerSpriteSheet: new ImageSource(playerSpritePath, {filtering: ImageFiltering.Pixel }),
-  NpcASpriteSheet: new ImageSource(npcASpriteSheet),
-  NpcBSpriteSheet: new ImageSource(npcBSpriteSheet),
-  NpcCSpriteSheet: new ImageSource(npcCSpriteSheet),
+  NpcASpriteSheet: new ImageSource(npcASpriteSheet, { filtering: ImageFiltering.Pixel }),
+  NpcBSpriteSheet: new ImageSource(npcBSpriteSheet, { filtering: ImageFiltering.Pixel }),
+  NpcCSpriteSheet: new ImageSource(npcCSpriteSheet, { filtering: ImageFiltering.Pixel }),
 
   fotoMesaA: new ImageSource(fotoMesaA),
   fotoMesaB: new ImageSource(fotoMesaB),
   fotoMesaC: new ImageSource(fotoMesaC),
-
-
 
   LogoVertical: new ImageSource(logoVertical),
   RitmadaBGM: new Sound(ritmada),

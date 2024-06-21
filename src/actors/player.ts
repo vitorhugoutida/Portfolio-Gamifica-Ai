@@ -120,6 +120,8 @@ export class Player extends Actor {
 
         this.graphics.add("down-idle", downIdle)
 
+        this.graphics.use("down-idle")
+
         // animações Walk
 
         // Andar para direita
